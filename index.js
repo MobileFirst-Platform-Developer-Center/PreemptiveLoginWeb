@@ -31,25 +31,10 @@ require(['ibmmfpfanalytics', 'mfp', 'challengehandler'], function(wlanalytics, W
     WL.Client.init(wlInitOptions).then (
         function() {
 			document.getElementById("getBalance").addEventListener("click", getBalance);
-			document.getElementById("login").addEventListener("click", login);
-			document.getElementById("logout").addEventListener("click", logout);
-		    // var userLoginChallengeHandler = UserLoginChallengeHandler();
 		    
 			CH.init();
 			showLoginDiv();
     });
-
-	function showLoginDiv() {
-	    document.getElementById('protectedDiv').style.display = 'none';
-	    document.getElementById('statusMsg').innerHTML = "";
-	    document.getElementById('loginDiv').style.display = 'block';
-	}
-
-	function showProtectedDiv() {
-	    document.getElementById('loginDiv').style.display = 'none';
-	    document.getElementById('resultLabel').innerHTML = "";
-	    document.getElementById('protectedDiv').style.display = 'block';
-	}
 
 	function getBalance () {
 	    var resourceRequest = new WLResourceRequest("/adapters/ResourceAdapter/balance", WLResourceRequest.GET);
@@ -65,3 +50,15 @@ require(['ibmmfpfanalytics', 'mfp', 'challengehandler'], function(wlanalytics, W
 		);
 	}
 });
+
+function showLoginDiv() {
+	document.getElementById('protectedDiv').style.display = 'none';
+	document.getElementById('statusMsg').innerHTML = "";
+	document.getElementById('loginDiv').style.display = 'block';
+}
+
+function showProtectedDiv() {
+	document.getElementById('loginDiv').style.display = 'none';
+	document.getElementById('resultLabel').innerHTML = "";
+	document.getElementById('protectedDiv').style.display = 'block';
+}
