@@ -26,9 +26,14 @@ Follow the [Setting up the Web development environment](https://mobilefirstplatf
 3. In the MobileFirst Console → PreemptiveLoginWeb → Security, map the `accessRestricted` scope to the `UserLogin` security check.
 4. In a browser, load the URL [http://localhost:9081/sampleapp](http://localhost:9081/sampleapp).
 
-
 ### Supported Levels
 IBM MobileFirst Platform Foundation 8.0
+
+### Third Party
+This sample makes use of:
+
+* Nodejs to load RequireJS
+* RequireJS to load the MobileFirst SDK
 
 ### License
 Copyright 2016 IBM Corp.
